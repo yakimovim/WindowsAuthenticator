@@ -1,0 +1,73 @@
+﻿<Window x:Class="WindowsAuthenticator.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="{Binding Source={StaticResource localResources}, Path=Title}" 
+        Icon="/WindowsAuthenticator;component/Images/App.png"
+        WindowStartupLocation="CenterScreen"
+        MinHeight="400" MinWidth="525" Height="400" Width="525">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/> <!--Menu-->
+            <RowDefinition Height="Auto"/> <!--Time interval-->
+            <RowDefinition/> <!--Items-->
+        </Grid.RowDefinitions>
+        <ToolBar Grid.Row="0">
+            <ToolBarPanel>
+                <Button Command="{Binding AddItem}">
+                    <Image Width="32" Height="32" Source="/WindowsAuthenticator;component/Images/add.png"/>
+                </Button>
+            </ToolBarPanel>
+        </ToolBar>
+        <StackPanel Grid.Row="1" Orientation="Vertical">
+            <TextBlock Margin="5" FontSize="18" FontWeight="Bold" Text="{Binding Source={StaticResource localResources}, Path=TimeIntervalLabel}"/>
+            <ProgressBar Margin="5" Height="32" Minimum="0" Maximum="30" Value="{Binding Time}"></ProgressBar>
+        </StackPanel>
+        <ListBox Grid.Row="2" Margin="5" ItemsSource="{Binding Items}" HorizontalContentAlignment="Stretch">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <DataTemplate.Resources>
+                        <Style TargetType="{x:Type Button}" x:Key="ItemButtons">
+                            <Setter Property="Margin" Value="3"/>
+                            <Setter Property="Padding" Value="0"/>
+                            <Setter Property="Width" Value="32"/>
+                            <Setter Property="Height" Value="32"/>
+                        </Style>
+                        <Style TargetType="{x:Type Image}" x:Key="ItemButtonsImage">
+                            <Setter Property="Width" Value="26"/>
+                            <Setter Property="Height" Value="26"/>
+                        </Style>
+                    </DataTemplate.Resources>
+                    <Border BorderThickness="1" BorderBrush="Black" CornerRadius="5" Margin="3">
+                        <Grid Margin="3" HorizontalAlignment="Stretch">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel Grid.Column="0" Orientation="Vertical">
+                                <TextBlock Margin="3" FontSize="18" Text="{Binding Title}"/>
+                                <TextBlock Margin="20,3,3,3" FontSize="24" FontWeight="Bold" Text="{Binding Code}"/>
+                            </StackPanel>
+                            <StackPanel  Grid.Column="1" Orientation="Horizontal">
+                                <Button Style="{StaticResource ItemButtons}"
+                                    Command="{Binding DataContext.CopyCode, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}"
+                                    CommandParameter="{Binding}">
+                                    <Image Style="{StaticResource ItemButtonsImage}" Source="/WindowsAuthenticator;component/Images/copy.png"/>
+                                </Button>
+                                <Button Style="{StaticResource ItemButtons}"
+                                    Command="{Binding DataContext.EditItem, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}"
+                                    CommandParameter="{Binding}">
+                                    <Image Style="{StaticResource ItemButtonsImage}" Source="/WindowsAuthenticator;component/Images/edit.png"/>
+                                </Button>
+                                <Button Style="{StaticResource ItemButtons}"
+                                    Command="{Binding DataContext.DeleteItem, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}"
+                                    CommandParameter="{Binding}">
+                                    <Image Style="{StaticResource ItemButtonsImage}" Source="/WindowsAuthenticator;component/Images/delete.png"/>
+                                </Button>
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+</Window>
