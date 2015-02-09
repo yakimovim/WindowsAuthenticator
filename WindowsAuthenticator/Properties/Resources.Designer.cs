@@ -70,6 +70,15 @@ namespace WindowsAuthenticator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add new item....
+        /// </summary>
+        public static string AddItemTooltip {
+            get {
+                return ResourceManager.GetString("AddItemTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cancel.
         /// </summary>
         public static string Cancel {
@@ -79,11 +88,20 @@ namespace WindowsAuthenticator.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Click Me.
+        ///   Looks up a localized string similar to Copy code of this item into clipboard.
         /// </summary>
-        public static string ClickMe {
+        public static string CopyCodeTooltip {
             get {
-                return ResourceManager.GetString("ClickMe", resourceCulture);
+                return ResourceManager.GetString("CopyCodeTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete this item....
+        /// </summary>
+        public static string DeleteItemTooltip {
+            get {
+                return ResourceManager.GetString("DeleteItemTooltip", resourceCulture);
             }
         }
         
@@ -93,6 +111,15 @@ namespace WindowsAuthenticator.Properties {
         public static string EditItem {
             get {
                 return ResourceManager.GetString("EditItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit title of this item....
+        /// </summary>
+        public static string EditItemTooltip {
+            get {
+                return ResourceManager.GetString("EditItemTooltip", resourceCulture);
             }
         }
         
@@ -133,6 +160,15 @@ namespace WindowsAuthenticator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Enter secret code of this item here.
+        /// </summary>
+        public static string SecretTextBoxTooltip {
+            get {
+                return ResourceManager.GetString("SecretTextBoxTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Time interval:.
         /// </summary>
         public static string TimeIntervalLabel {
@@ -165,6 +201,15 @@ namespace WindowsAuthenticator.Properties {
         public static string TitleLabel {
             get {
                 return ResourceManager.GetString("TitleLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter title of this item here.
+        /// </summary>
+        public static string TitleTextBoxTooltip {
+            get {
+                return ResourceManager.GetString("TitleTextBoxTooltip", resourceCulture);
             }
         }
     }

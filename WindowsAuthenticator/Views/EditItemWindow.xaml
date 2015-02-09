@@ -9,31 +9,17 @@
         WindowStartupLocation="CenterScreen"
         ShowInTaskbar="False" WindowStyle="ToolWindow"
         validation:ValidationHelper.ValidateBeforeClose="True" >
-    <Window.Resources>
-        <Style TargetType="{x:Type TextBlock}" x:Key="Labels">
-            <Setter Property="Margin" Value="3"/>
-            <Setter Property="FontSize" Value="20"/>
-            <Setter Property="FontWeight" Value="Bold"/>
-        </Style>
-        <Style TargetType="{x:Type TextBox}" x:Key="TextBoxes">
-            <Setter Property="Margin" Value="5"/>
-            <Setter Property="FontSize" Value="30"/>
-            <Setter Property="FontWeight" Value="Bold"/>
-        </Style>
-        <Style TargetType="{x:Type Button}" x:Key="OkCancelButtons">
-            <Setter Property="Margin" Value="5"/>
-            <Setter Property="FontSize" Value="14"/>
-            <Setter Property="MinWidth" Value="60"/>
-        </Style>
-    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Orientation="Vertical">
-            <TextBlock Style="{StaticResource Labels}" Text="{Binding Source={StaticResource localResources}, Path=TitleLabel}"/>
-            <TextBox Style="{StaticResource TextBoxes}">
+            <TextBlock Style="{StaticResource Labels}" 
+                       Text="{Binding Source={StaticResource localResources}, Path=TitleLabel}"
+                       ToolTip="{Binding Source={StaticResource localResources}, Path=TitleTextBoxTooltip}"/>
+            <TextBox Style="{StaticResource TextBoxes}"
+                     ToolTip="{Binding Source={StaticResource localResources}, Path=TitleTextBoxTooltip}">
                 <TextBox.Text>
                     <Binding Path="Title" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged">
                         <Binding.ValidationRules>

@@ -120,14 +120,23 @@
   <data name="AddItem" xml:space="preserve">
     <value>Add item</value>
   </data>
+  <data name="AddItemTooltip" xml:space="preserve">
+    <value>Add new item...</value>
+  </data>
   <data name="Cancel" xml:space="preserve">
     <value>Cancel</value>
   </data>
-  <data name="ClickMe" xml:space="preserve">
-    <value>Click Me</value>
+  <data name="CopyCodeTooltip" xml:space="preserve">
+    <value>Copy code of this item into clipboard</value>
+  </data>
+  <data name="DeleteItemTooltip" xml:space="preserve">
+    <value>Delete this item...</value>
   </data>
   <data name="EditItem" xml:space="preserve">
     <value>Edit item</value>
+  </data>
+  <data name="EditItemTooltip" xml:space="preserve">
+    <value>Edit title of this item...</value>
   </data>
   <data name="EnterYourName" xml:space="preserve">
     <value>Enter your name:</value>
@@ -141,6 +150,9 @@
   <data name="SecretLabel" xml:space="preserve">
     <value>Secret code:</value>
   </data>
+  <data name="SecretTextBoxTooltip" xml:space="preserve">
+    <value>Enter secret code of this item here</value>
+  </data>
   <data name="TimeIntervalLabel" xml:space="preserve">
     <value>Time interval:</value>
   </data>
@@ -152,5 +164,8 @@
   </data>
   <data name="TitleLabel" xml:space="preserve">
     <value>Title:</value>
+  </data>
+  <data name="TitleTextBoxTooltip" xml:space="preserve">
+    <value>Enter title of this item here</value>
   </data>
 </root>

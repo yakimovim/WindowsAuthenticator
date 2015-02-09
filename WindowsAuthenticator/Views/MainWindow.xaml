@@ -7,19 +7,22 @@
         MinHeight="400" MinWidth="525" Height="400" Width="525">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/> <!--Menu-->
-            <RowDefinition Height="Auto"/> <!--Time interval-->
-            <RowDefinition/> <!--Items-->
+            <RowDefinition Height="Auto"/>
+            <!--Menu-->
+            <RowDefinition Height="Auto"/>
+            <!--Time interval-->
+            <RowDefinition/>
+            <!--Items-->
         </Grid.RowDefinitions>
         <ToolBar Grid.Row="0">
             <ToolBarPanel>
-                <Button Command="{Binding AddItem}">
+                <Button Command="{Binding AddItem}" ToolTip="{Binding Source={StaticResource localResources}, Path=AddItemTooltip}">
                     <Image Width="32" Height="32" Source="/WindowsAuthenticator;component/Images/add.png"/>
                 </Button>
             </ToolBarPanel>
         </ToolBar>
         <StackPanel Grid.Row="1" Orientation="Vertical">
-            <TextBlock Margin="5" FontSize="18" FontWeight="Bold" Text="{Binding Source={StaticResource localResources}, Path=TimeIntervalLabel}"/>
+            <TextBlock Style="{StaticResource Labels}" Text="{Binding Source={StaticResource localResources}, Path=TimeIntervalLabel}"/>
             <ProgressBar Margin="5" Height="32" Minimum="0" Maximum="30" Value="{Binding Time}"></ProgressBar>
         </StackPanel>
         <ListBox Grid.Row="2" Margin="5" ItemsSource="{Binding Items}" HorizontalContentAlignment="Stretch">
@@ -50,17 +53,20 @@
                             <StackPanel  Grid.Column="1" Orientation="Horizontal">
                                 <Button Style="{StaticResource ItemButtons}"
                                     Command="{Binding DataContext.CopyCode, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}"
-                                    CommandParameter="{Binding}">
+                                    CommandParameter="{Binding}"
+                                    ToolTip="{Binding Source={StaticResource localResources}, Path=CopyCodeTooltip}">
                                     <Image Style="{StaticResource ItemButtonsImage}" Source="/WindowsAuthenticator;component/Images/copy.png"/>
                                 </Button>
                                 <Button Style="{StaticResource ItemButtons}"
                                     Command="{Binding DataContext.EditItem, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}"
-                                    CommandParameter="{Binding}">
+                                    CommandParameter="{Binding}"
+                                    ToolTip="{Binding Source={StaticResource localResources}, Path=EditItemTooltip}">
                                     <Image Style="{StaticResource ItemButtonsImage}" Source="/WindowsAuthenticator;component/Images/edit.png"/>
                                 </Button>
                                 <Button Style="{StaticResource ItemButtons}"
                                     Command="{Binding DataContext.DeleteItem, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}"
-                                    CommandParameter="{Binding}">
+                                    CommandParameter="{Binding}"
+                                    ToolTip="{Binding Source={StaticResource localResources}, Path=DeleteItemTooltip}">
                                     <Image Style="{StaticResource ItemButtonsImage}" Source="/WindowsAuthenticator;component/Images/delete.png"/>
                                 </Button>
                             </StackPanel>
