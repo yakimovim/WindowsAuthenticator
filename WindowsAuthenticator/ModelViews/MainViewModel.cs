@@ -81,8 +81,8 @@ namespace WindowsAuthenticator.ModelViews
             {
                 return new DelegateCommand(arg =>
                 {
-                    var itemViewModel = new AddItemViewModel(_items.Select(i => i.Title));
-                    var dialog = new AddItemWindow {DataContext = itemViewModel};
+                    var itemViewModel = new AddItemViewModel();
+                    var dialog = new AddItemWindow { DataContext = itemViewModel };
                     dialog.ValidateTextBoxes();
 
                     if (dialog.ShowDialog() == true)
@@ -100,6 +100,29 @@ namespace WindowsAuthenticator.ModelViews
                         var viewModel = new ItemViewModel(authenticationItem);
                         viewModel.UpdateCode(_count);
                         _items.Add(viewModel);
+                    }
+                });
+            }
+        }
+
+        public ICommand EditItem
+        {
+            get
+            {
+                return new DelegateCommand(arg =>
+                {
+                    var itemViewModel = (ItemViewModel)arg;
+
+                    var editItemViewModel = new EditItemViewModel { Title = itemViewModel.Title };
+
+                    var dialog = new EditItemWindow { DataContext = editItemViewModel };
+                    dialog.ValidateTextBoxes();
+
+                    if (dialog.ShowDialog() == true)
+                    {
+                        itemViewModel.Title = editItemViewModel.Title;
+
+                        ConfigurationStorage.Configuration.Save();
                     }
                 });
             }
@@ -124,6 +147,19 @@ namespace WindowsAuthenticator.ModelViews
                         ConfigurationStorage.Section.Items.Remove(itemViewModel.Title);
                         ConfigurationStorage.Configuration.Save();
                     }
+                });
+            }
+        }
+
+        public ICommand CopyCode
+        {
+            get
+            {
+                return new DelegateCommand(arg =>
+                {
+                    var itemViewModel = (ItemViewModel)arg;
+
+                    Clipboard.SetText(itemViewModel.Code);
                 });
             }
         }

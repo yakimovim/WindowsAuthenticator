@@ -126,6 +126,9 @@
   <data name="ClickMe" xml:space="preserve">
     <value>Click Me</value>
   </data>
+  <data name="EditItem" xml:space="preserve">
+    <value>Edit item</value>
+  </data>
   <data name="EnterYourName" xml:space="preserve">
     <value>Enter your name:</value>
   </data>

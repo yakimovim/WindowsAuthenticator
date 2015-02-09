@@ -23,6 +23,14 @@ namespace WindowsAuthenticator.ModelViews
         {
             [DebuggerStepThrough]
             get { return _item.Title; }
+            set
+            {
+                if (_item.Title != value)
+                {
+                    _item.Title = value;
+                    OnPropertyChanged();
+                }
+            }
         }
 
         public string Code

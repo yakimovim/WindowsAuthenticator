@@ -88,6 +88,15 @@ namespace WindowsAuthenticator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Edit item.
+        /// </summary>
+        public static string EditItem {
+            get {
+                return ResourceManager.GetString("EditItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Enter your name:.
         /// </summary>
         public static string EnterYourName {

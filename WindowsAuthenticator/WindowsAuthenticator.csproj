@@ -66,15 +66,23 @@
     <Compile Include="Models\CurrentTimeProvider.cs" />
     <Compile Include="Models\CounterBasedOneTimePassword.cs" />
     <Compile Include="ModelViews\AddItemViewModel.cs" />
+    <Compile Include="ModelViews\EditItemViewModel.cs" />
     <Compile Include="ModelViews\ItemViewModel.cs" />
     <Compile Include="Views\AddItemWindow.xaml.cs">
       <DependentUpon>AddItemWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EditItemWindow.xaml.cs">
+      <DependentUpon>EditItemWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Support\ButtonHelper.cs" />
     <Compile Include="Views\Support\Validation\ExistingTitlesRule.cs" />
     <Compile Include="Views\Support\Validation\ValidationHelper.cs" />
     <Compile Include="Views\Support\WindowHelper.cs" />
     <Page Include="Views\AddItemWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EditItemWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

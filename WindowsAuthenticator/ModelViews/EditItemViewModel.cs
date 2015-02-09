@@ -2,20 +2,20 @@
 
 namespace WindowsAuthenticator.ModelViews
 {
-    internal class AddItemViewModel : EditItemViewModel
+    internal class EditItemViewModel : BaseViewModel
     {
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        private string _secret;
+        private string _title;
 
-        public string Secret
+        public string Title
         {
             [DebuggerStepThrough]
-            get { return _secret; }
+            get { return _title; }
             set
             {
-                if (_secret != value)
+                if (_title != value)
                 {
-                    _secret = value;
+                    _title = value;
                     OnPropertyChanged();
                 }
             }
