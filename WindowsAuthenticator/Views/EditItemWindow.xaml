@@ -4,7 +4,7 @@
         xmlns:support="clr-namespace:WindowsAuthenticator.Views.Support"
         xmlns:validation="clr-namespace:WindowsAuthenticator.Views.Support.Validation"
         Title="{Binding Source={StaticResource localResources}, Path=EditItem}" 
-        Height="150" Width="400" MinHeight="150" MinWidth="300" MaxHeight="170" 
+        Height="160" Width="400" MinHeight="160" MinWidth="300" MaxHeight="180" 
         Icon="/WindowsAuthenticator;component/Images/App.png"
         WindowStartupLocation="CenterScreen"
         ShowInTaskbar="False" WindowStyle="ToolWindow"
