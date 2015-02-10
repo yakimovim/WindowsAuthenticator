@@ -12,6 +12,13 @@ namespace WindowsAuthenticator.Models.Configuration
             Configuration = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.PerUserRoaming);
 
             Section = (AuthenticationItemsSection)Configuration.GetSection("authenticationItems");
+
+            if (!Section.SectionInformation.IsProtected)
+            {
+                Section.SectionInformation.ProtectSection("DataProtectionConfigurationProvider");
+                Section.SectionInformation.ForceSave = true;
+                Configuration.Save(ConfigurationSaveMode.Full);
+            }
         }
 
     }

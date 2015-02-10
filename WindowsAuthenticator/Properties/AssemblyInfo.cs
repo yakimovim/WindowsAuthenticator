@@ -5,12 +5,12 @@ using System.Windows;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("WindowsAuthenticator")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Windows Authenticator")]
+[assembly: AssemblyDescription("Windows Authenticator")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Confirmit")]
-[assembly: AssemblyProduct("WindowsAuthenticator")]
-[assembly: AssemblyCopyright("Copyright © Confirmit 2015")]
+[assembly: AssemblyCompany("EdlinSoftware")]
+[assembly: AssemblyProduct("Windows Authenticator")]
+[assembly: AssemblyCopyright("Copyright © EdlinSoftware 2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
