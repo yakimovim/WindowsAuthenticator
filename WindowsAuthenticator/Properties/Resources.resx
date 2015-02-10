@@ -129,6 +129,13 @@
   <data name="CopyCodeTooltip" xml:space="preserve">
     <value>Copy code of this item into clipboard</value>
   </data>
+  <data name="DeleteConfirmation" xml:space="preserve">
+    <value>Do you really want to delete '{0}'?</value>
+    <comment>0 - title of item</comment>
+  </data>
+  <data name="DeleteConfirmationTitle" xml:space="preserve">
+    <value>Deleting item...</value>
+  </data>
   <data name="DeleteItemTooltip" xml:space="preserve">
     <value>Delete this item...</value>
   </data>
@@ -137,9 +144,6 @@
   </data>
   <data name="EditItemTooltip" xml:space="preserve">
     <value>Edit title of this item...</value>
-  </data>
-  <data name="EnterYourName" xml:space="preserve">
-    <value>Enter your name:</value>
   </data>
   <data name="FieldCantBeEmpty" xml:space="preserve">
     <value>This field can't be empty</value>

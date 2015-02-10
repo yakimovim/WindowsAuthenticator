@@ -97,6 +97,24 @@ namespace WindowsAuthenticator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Do you really want to delete &apos;{0}&apos;?.
+        /// </summary>
+        public static string DeleteConfirmation {
+            get {
+                return ResourceManager.GetString("DeleteConfirmation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Deleting item....
+        /// </summary>
+        public static string DeleteConfirmationTitle {
+            get {
+                return ResourceManager.GetString("DeleteConfirmationTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Delete this item....
         /// </summary>
         public static string DeleteItemTooltip {
@@ -120,15 +138,6 @@ namespace WindowsAuthenticator.Properties {
         public static string EditItemTooltip {
             get {
                 return ResourceManager.GetString("EditItemTooltip", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Enter your name:.
-        /// </summary>
-        public static string EnterYourName {
-            get {
-                return ResourceManager.GetString("EnterYourName", resourceCulture);
             }
         }
         

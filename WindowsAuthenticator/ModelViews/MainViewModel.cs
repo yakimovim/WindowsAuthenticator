@@ -8,6 +8,7 @@ using System.Windows.Input;
 using System.Windows.Threading;
 using WindowsAuthenticator.Models;
 using WindowsAuthenticator.Models.Configuration;
+using WindowsAuthenticator.Properties;
 using WindowsAuthenticator.Views;
 using WindowsAuthenticator.Views.Support;
 
@@ -137,9 +138,10 @@ namespace WindowsAuthenticator.ModelViews
                     var itemViewModel = (ItemViewModel)arg;
 
                     if (MessageBox.Show(
-                        string.Format("Do you really want to delete '{0}'?", itemViewModel.Title),
-                        "Question",
-                        MessageBoxButton.YesNo) ==
+                        string.Format(Resources.DeleteConfirmation, itemViewModel.Title),
+                        Resources.DeleteConfirmationTitle,
+                        MessageBoxButton.YesNo, 
+                        MessageBoxImage.Question) ==
                         MessageBoxResult.Yes)
                     {
                         _items.Remove(itemViewModel);
