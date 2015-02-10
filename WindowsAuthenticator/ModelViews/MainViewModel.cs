@@ -31,7 +31,7 @@ namespace WindowsAuthenticator.ModelViews
             ConfigurationStorage.Section.Items.OfType<AuthenticationItem>().ToList().ForEach(i => _items.Add(new ItemViewModel(i)));
             _items.ToList().ForEach(i => i.UpdateCode(_count));
 
-            _timer = new Timer(DoOnEachTimerTick, null, TimeSpan.FromMilliseconds(100), TimeSpan.FromMilliseconds(100));
+            _timer = new Timer(DoOnEachTimerTick, null, TimeSpan.FromMilliseconds(50), TimeSpan.FromMilliseconds(50));
         }
 
         private void DoOnEachTimerTick(object state)
