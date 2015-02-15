@@ -8,7 +8,11 @@ namespace WindowsAuthenticator.Views
         {
             InitializeComponent();
 
-            DataContext = new MainViewModel { Dispatcher = Dispatcher };
+            DataContext = new MainViewModel
+            {
+                Dispatcher = Dispatcher,
+                OwnerWindow = this
+            };
         }
     }
 }

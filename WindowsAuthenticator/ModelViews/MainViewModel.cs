@@ -24,6 +24,8 @@ namespace WindowsAuthenticator.ModelViews
 
         public Dispatcher Dispatcher { get; set; }
 
+        public Window OwnerWindow { get; set; }
+
         public MainViewModel()
         {
             _count = CurrentTimeProvider.GetCurrentCounter();
@@ -83,9 +85,9 @@ namespace WindowsAuthenticator.ModelViews
                 return new DelegateCommand(arg =>
                 {
                     var itemViewModel = new AddItemViewModel();
-                    var dialog = new AddItemWindow { DataContext = itemViewModel };
+                    var dialog = new AddItemWindow { Owner = OwnerWindow, DataContext = itemViewModel };
                     dialog.ValidateTextBoxes();
-
+                    
                     if (dialog.ShowDialog() == true)
                     {
                         var authenticationItem = new AuthenticationItem
@@ -116,7 +118,7 @@ namespace WindowsAuthenticator.ModelViews
 
                     var editItemViewModel = new EditItemViewModel { Title = itemViewModel.Title };
 
-                    var dialog = new EditItemWindow { DataContext = editItemViewModel };
+                    var dialog = new EditItemWindow { Owner = OwnerWindow, DataContext = editItemViewModel };
                     dialog.ValidateTextBoxes();
 
                     if (dialog.ShowDialog() == true)
@@ -138,6 +140,7 @@ namespace WindowsAuthenticator.ModelViews
                     var itemViewModel = (ItemViewModel)arg;
 
                     if (MessageBox.Show(
+                        OwnerWindow,
                         string.Format(Resources.DeleteConfirmation, itemViewModel.Title),
                         Resources.DeleteConfirmationTitle,
                         MessageBoxButton.YesNo, 
